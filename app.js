@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGO_URI)
 const app = express();
 const Port = process.env.PORT;
 
+// app.use(express.static('./public'))
 app.use(express.json());
 
 app.use("/api/v1", taskRouter);

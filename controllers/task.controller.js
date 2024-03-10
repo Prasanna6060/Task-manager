@@ -30,10 +30,10 @@ export const createTasks = async (req, res) => {
 };
 
 export const updateTasks = async (req, res) => {
-  const id = req.params.id;
+  const {id: taskID }= req.params.id;
   const updates = req.body;
   try {
-    const updateTasks = await taskModel.findByIdAndUpdate(id, updates, {
+    const updateTasks = await taskModel.findByIdAndUpdate(taskID, updates, {
       new: true,
     });
     console.log(updateTasks);
